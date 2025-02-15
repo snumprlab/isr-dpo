@@ -11,8 +11,8 @@ San Kim<sup>1</sup>,
 <sup>3</sup>University of Minnesota<br>
 <sup>&dagger;</sup>Corresponding Author<br>
 
-[![srt-model](https://img.shields.io/badge/Model-isrt__9th__7b-blue)](https://huggingface.co/SNUMPR/isrt_video_llava_7b_9th)
-[![isrt-paper](https://img.shields.io/badge/Paper-arxiv-green)](https://arxiv.org/pdf/2406.11280v1)
+[![srt-model](https://img.shields.io/badge/Model-isrdpo__9th__7b-blue)](https://huggingface.co/SNUMPR/isrdpo_video_llava_7b_9th)
+[![isrdpo-paper](https://img.shields.io/badge/Paper-arxiv-green)](https://arxiv.org/pdf/2406.11280v1)
 
 > **Abstract:** *Iterative self-improvement, a concept extending beyond personal growth, has found powerful applications in machine learning, particularly in transforming weak models into strong ones. While recent advances in natural language processing have shown its efficacy through iterative preference optimization, applying this approach to Video Large Multimodal Models (VLMMs) remains challenging due to modality misalignment. VLMMs struggle with this misalignment during iterative preference modeling, as the self-judge model often prioritizes linguistic knowledge over visual information. Additionally, iterative preference optimization can lead to visually hallucinated verbose responses due to length bias within the self-rewarding cycle. To address these issues, we propose Iterative Self-Retrospective Direct Preference Optimization (ISR-DPO), a method that uses self-retrospection to enhance preference modeling. This approach enhances the self-judge's focus on informative video regions, resulting in more visually grounded preferences. In extensive empirical evaluations across dieverse video question answering benchmarks, the ISR-DPO significantly outperforms the state of the art.*
 
@@ -37,7 +37,7 @@ San Kim<sup>1</sup>,
     # out-domain video question answering
     bash Evaluation/pipeline/outdomain_test_pipeline.sh \
         results \
-        SNUMPR/isrt_video_llava_7b_9th
+        SNUMPR/isrdpo_video_llava_7b_9th
 
 
 ## Building Preference Data w/ Model
