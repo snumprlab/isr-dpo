@@ -19,7 +19,15 @@ def get_id_from_frame_path(path):
     return path.split('/')[-1].split('.')[0]
 
 def set_seed(seed: int) -> None:
-    """Set RNG seeds for python's `random` module, numpy and torch"""
+    """
+    Set RNG seeds for python's `random` module, numpy and torch
+
+    Parameters:
+    seed (int): The seed to set.
+
+    Returns:
+    None
+    """
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
@@ -72,18 +80,6 @@ def load_video_into_frames(
         video_decode_backend='opencv',
         num_frames=8,
 ):
-    # if video_decode_backend == 'decord':
-    #     import decord
-    #     decord.bridge.set_bridge('torch')
-    #     decord_vr = VideoReader(video_path, ctx=cpu(0))
-    #     ori_duration = len(decord_vr)
-    #     # frame_id_list = np.linspace(0, duration-1, num_frames, dtype=int)
-    #     fps_vid = decord_vr.get_avg_fps()
-    #     valid_duration = min(int(fps_vid * 10), ori_duration)
-    #     frame_id_list = np.linspace(0, valid_duration-1, num_frames, dtype=int)
-    #     video_data = decord_vr.get_batch(frame_id_list)
-    #     video_data = video_data.permute(3, 0, 1, 2)  # (T, H, W, C) -> (C, T, H, W)
-    #     video_outputs = transform(video_data)
 
     if video_decode_backend == 'decord':
         import decord
@@ -167,9 +163,7 @@ def load_image(path):
 def display_image(image):
     plt.imshow(image)
     plt.axis('off')  # Turn off axis numbers and labels
-    plt.show()
-
-# ------- text processing -------
+    plt.show() # show the image
 
 def load_text(path):
     with open(path, "r") as f:
