@@ -1,8 +1,8 @@
-pred_path=$1
-gt_path=$2
+pred_path=$1 # the path to the predicted data
+gt_path=$2 # the path to the ground truth data
 eval_dir=$3
-resulting_path=${4:-"eval_results.jsonl"}
-prompt_ver=${5:-"none"}
+resulting_path=${4:-"eval_results.jsonl"} # the path to the resulting data
+prompt_ver=${5:-"none"} # the version of the prompt
 
 GPT_MODEL_NAME="gpt-3.5-turbo-0301"
 export OPENAI_KEY=""
@@ -37,3 +37,6 @@ python3 test/eval/eval_qa.py \
     --resulting_path ${resulting_path} \
     --prompt_ver $prompt_ver \
     # --num_samples ${num_samples}
+    # --temperature ${temperature}
+    # --top_p ${top_p}
+    # --max_new_tokens ${max_new_tokens}
