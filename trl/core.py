@@ -192,7 +192,15 @@ def stats_to_np(stats_dict: Dict) -> Dict:
 def respond_to_batch(
     model: nn.Module, queries: List[torch.LongTensor], txt_len: int = 20, top_k: int = 0, top_p: float = 1.0
 ) -> torch.LongTensor:
-    """Sample text from language model."""
+    """Sample text from language model. 
+    Args:
+        model (nn.Module): The model to sample from.
+        queries (List[torch.LongTensor]): The queries to sample from.
+        txt_len (int): The length of the text to sample.
+        top_k (int): The number of top k tokens to sample from.
+        top_p (float): The top p tokens to sample from.
+    Returns:
+    """
     input_ids = queries
     for i in range(txt_len):
         # Get Logits
